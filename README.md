@@ -1,4 +1,4 @@
-# YmWordpressPluginTemplate
+# YM Wordpress Plugin Template
 
 This is a base template for creating an advanced plugin for WordPress.
 
