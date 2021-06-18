@@ -142,14 +142,14 @@ register_activation_hook(__FILE__, 'plugintemplate_uninstallation');
 
 function add_plugintemplate_stylesheet()
 {
-	wp_register_style('plugintemplate_style', WP_PLUGIN_URL . '/PluginTemplate/assets/styles/style.css');
+	wp_register_style('plugintemplate_style', WP_PLUGIN_URL . '/YmWordpressPluginTemplate/assets/styles/style.css');
 	wp_enqueue_style('plugintemplate_style');
 }
 
 function add_plugintemplate_scripts()
 {
 	if (! is_admin()) {
-		wp_register_script('plugintemplate_script', WP_PLUGIN_URL . '/PluginTemplate/assets/scripts/script.js');
+		wp_register_script('plugintemplate_script', WP_PLUGIN_URL . '/YmWordpressPluginTemplate/assets/scripts/script.js');
 		wp_enqueue_script('plugintemplate_script');
 	}
 }
