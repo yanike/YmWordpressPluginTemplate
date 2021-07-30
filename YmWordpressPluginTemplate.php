@@ -18,6 +18,10 @@ if (! defined('ABSPATH')) {
 	die();
 }
 
+if (! defined('PLUGIN_DIR')) {
+	define('PLUGIN_DIR', '/wp-content/plugins/YmWordpressPluginTemplate/'));
+}
+
 if (! defined('PLUGINTEMPLATE_DIR')) {
 	define('PLUGINTEMPLATE_DIR', plugin_dir_path(__FILE__));
 }
@@ -142,14 +146,14 @@ register_activation_hook(__FILE__, 'plugintemplate_uninstallation');
 
 function add_plugintemplate_stylesheet()
 {
-	wp_register_style('plugintemplate_style', WP_PLUGIN_URL . '/YmWordpressPluginTemplate/assets/styles/style.css');
+	wp_register_style('plugintemplate_style', PLUGIN_DIR . 'assets/styles/style.css');
 	wp_enqueue_style('plugintemplate_style');
 }
 
 function add_plugintemplate_scripts()
 {
 	if (! is_admin()) {
-		wp_register_script('plugintemplate_script', WP_PLUGIN_URL . '/YmWordpressPluginTemplate/assets/scripts/script.js');
+		wp_register_script('plugintemplate_script', PLUGIN_DIR . 'assets/scripts/script.js');
 		wp_enqueue_script('plugintemplate_script');
 	}
 }
@@ -157,7 +161,7 @@ function add_plugintemplate_scripts()
 function testSec($atts)
 {
 	$core = new \Core;
-	$core->testSection($atts);
+	$core->testSection($atts, PLUGINTEMPLATE_DIR);
 }
 
 function add_plugintemplate_shortcodes()

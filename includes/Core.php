@@ -21,9 +21,9 @@ class Core
 	 *
 	 * @param mixed $atts
 	 */
-	public function testSection($atts)
+	public function testSection($atts, $plugin_dir)
 	{
 		$testSection = new TestSection();
-		$testSection->getContent($atts);
+		$testSection->getContent($atts, $plugin_dir);
 	}
 }
