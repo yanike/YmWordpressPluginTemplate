@@ -21,7 +21,7 @@ class TestSection
 
           echo json_encode($terms, JSON_HEX_QUOT);
           die();
-        });
+        }
         add_action('wp_ajax_test_fun', 'test_fun');
         add_action('wp_ajax_nopriv_test_fun', 'test_fun');
     }
