@@ -142,7 +142,7 @@ function plugintemplate_uninstallation()
 }
 
 // uninstall
-register_activation_hook(__FILE__, 'plugintemplate_uninstallation');
+register_uninstall_hook(__FILE__, 'plugintemplate_uninstallation');
 
 function add_plugintemplate_stylesheet()
 {
