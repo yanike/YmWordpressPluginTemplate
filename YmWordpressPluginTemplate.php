@@ -122,6 +122,33 @@ if (class_exists('YmWordpressPluginTemplate')) {
 
 function plugin_activation(){
 	register_uninstall_hook( __FILE__, 'plugintemplate_uninstallation' );
+
+	global $table_prefix, $wpdb;
+
+	/*
+	$tblname = 'newtable';
+	$wp_newtable_table = $table_prefix . $tblname;
+
+	// Check to see if the table exists already, if not, then create it
+	 if($wpdb->get_var( "show tables like '$wp_newtable_table'" ) != $wp_newtable_table)
+	 {
+		 $sql = "CREATE TABLE `". $wp_newtable_table . "` ( ";
+		 $sql .= "  `id`  int(11)   NOT NULL auto_increment, ";
+		 $sql .= "  `client_id`  longtext   NOT NULL, ";
+		 $sql .= "  `client_secret`  longtext   NOT NULL, ";
+		 $sql .= "  PRIMARY KEY `order_id` (`id`) ";
+		 $sql .= ") ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ; ";
+		 require_once( ABSPATH . '/wp-admin/includes/upgrade.php' );
+		 dbDelta($sql);
+	 }
+
+	 $wpdb->insert($wp_newtable_table,
+	 array(
+		 'client_id' => 'XXX',
+		 'client_secret' => 'XXX',
+	 )
+ );
+ */
 }
 
 /**
@@ -143,7 +170,7 @@ function plugintemplate_uninstallation()
 register_activation_hook(__FILE__, 'plugin_activation');
 
 // activation
-register_deactivation_hook(__FILE__, 'deactivate');
+register_deactivation_hook(__FILE__, 'plugin_deactivation');
 
 function add_plugintemplate_stylesheet()
 {
