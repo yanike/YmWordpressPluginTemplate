@@ -120,11 +120,9 @@ if (class_exists('YmWordpressPluginTemplate')) {
 	$ymWordpressPluginTemplate = new YmWordpressPluginTemplate();
 }
 
-// activation
-register_activation_hook(__FILE__, 'active');
-
-// activation
-register_deactivation_hook(__FILE__, 'deactivate');
+function plugin_activation(){
+	register_uninstall_hook( __FILE__, 'plugintemplate_uninstallation' );
+}
 
 /**
  * Uninstallation of WordPress Plugin
@@ -141,8 +139,11 @@ function plugintemplate_uninstallation()
 	// $wpdb->query("DELETE FROM wp_term_relationships WHERE object_id NOT IN(SELECT ID FROM wp_posts)");
 }
 
-// uninstall
-register_uninstall_hook(__FILE__, 'plugintemplate_uninstallation');
+// activation
+register_activation_hook(__FILE__, 'plugin_activation');
+
+// activation
+register_deactivation_hook(__FILE__, 'deactivate');
 
 function add_plugintemplate_stylesheet()
 {
