@@ -19,7 +19,7 @@ if (! defined('ABSPATH')) {
 }
 
 if (! defined('PLUGIN_DIR')) {
-	define('PLUGIN_DIR', '/wp-content/plugins/YmWordpressPluginTemplate/'));
+	define('PLUGIN_DIR', '/wp-content/plugins/YmWordpressPluginTemplate/');
 }
 
 if (! defined('PLUGINTEMPLATE_DIR')) {

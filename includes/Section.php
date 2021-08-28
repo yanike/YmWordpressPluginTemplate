@@ -4,6 +4,12 @@ class Section {
 	{
 	}
 
+  /**
+   * Section Top
+   *
+   * @param [type] $content
+   * @return void
+   */
 	function mainSectionTop($content){
     ?>
 
